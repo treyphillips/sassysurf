@@ -1,0 +1,545 @@
+/*
+  Colors
+*/
+$prussian-blue: rgba(0, 51, 83, 1);
+$french-blue: rgba(0, 105, 182, 1);
+$shuttle-gray: rgba(92, 104, 112, 1);
+$gull-gray: rgba(160, 179, 192, 1);
+
+$primary-color: $prussian-blue;
+$primary-accent-color: $french-blue;
+
+$secondary-color: $shuttle-gray;
+$secondary-accent-color: $gull-gray;
+
+/*
+Sizes
+*/
+$max-width: 1300px;
+$max-height: 1200px;
+
+/* Mixins */
+
+@mixin transluscent-background($color, $duration: 300ms) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparentize($color, .5);
+    transition: background-color $duration;
+
+  }
+  &:hover::after {
+    background-color: transparent;
+  }
+
+}
+/*
+  Original CSS
+*/
+
+*,
+*::before,
+*::after {
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+body {
+  margin: 0 auto;
+  $max-width;
+  $max-height;
+
+}
+// .tint {
+//   position: relative;
+//   float: left;
+//   cursor: pointer;
+// }
+// .tint:before {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background: $french-blue;
+//   -moz-transition: background 0.3s linear;
+//   -webkit-transition: background 0.3s linear;
+//   -o-transition: background 0.3s linear;
+//   transition: background 0.3s linear;
+// }
+a {
+  color: $gull-gray;
+}
+a:visited {
+  color: $gull-gray;
+}
+a:hover {
+  color: $gull-gray;
+}
+.tint:hover:before {
+  background: none;
+}
+.hz-center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#header {
+  width: 100%;
+  /*background-image: url("../images/ocean.jpg");*/
+
+  background-position: center center;
+  background-size: cover;
+  height: 500px;
+  font-weight: 300px;
+  font-size: 50px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  padding-top: 0;
+  background: linear-gradient(rgba(17, 117, 192, 0.85), rgba(17, 117, 192, 0.85)), url("../images/snow.jpg");
+}
+#header h1 {
+  font-weight: lighter;
+  font-size: 122px;
+  padding-bottom: 0;
+  margin-top: 153px;
+}
+#header p {
+  color: $prussian-blue;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  margin-top: -108px;
+}
+.about {
+  margin-right: 9px;
+}
+#mag {
+  position: absolute;
+  display: inline-block;
+  bottom: -10px;
+
+}
+#logo {
+  min-width: 580px;
+  margin: 0 auto;
+  text-decoration: none;
+  max-width: 940px;
+  margin-left: 81px;
+}
+#logo a {
+  text-decoration: none;
+}
+#logo .logosearch {
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  width: 998px;
+}
+#logo span {
+  bottom: 22px;
+  position: relative;
+  color: $prussian-blue;
+  font-weight: bold;
+  font-size: 17px;
+}
+logo .p {
+  position: fixed;
+}
+#logo .logosearch .top_ul li {
+  list-style-type: none;
+  display: inline-block;
+  position: relative;
+  bottom: 9px;
+  font-family: "Oswald", sans-serif;
+  color: $prussian-blue;
+  font-weight: bold;
+  font-size: 17px;
+}
+#logo .top_ul {
+  float: right;
+  text-decoration: none;
+  display: inline-block;
+}
+#tophead {
+  width: 60%;
+  font-size: 30px;
+  color: $prussian-blue;
+}
+.author {
+  color: $prussian-blue;
+}
+.on {
+  color: $french-blue;
+  font-size: 14px;
+  margin-left: 8px;
+}
+.date {
+  color: $french-blue;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 400;
+}
+#maintext p {
+  display: inline-block;
+}
+#peeweetext {
+  display: inline-block;
+}
+#peeweetext img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 26px;
+  width: 29px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  margin: 0 auto;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+#content {
+  max-width: 1302px;
+  margin: 0 50px 0 100px;
+}
+#maintext {
+  width: 55%;
+  clear: both;
+  display: inline-block;
+}
+#maintext p {
+  font-family: "Open Sans", sans-serif;
+}
+#maintext .date p {
+  text-decoration: underline;
+}
+#rad {
+  border-left: 2px solid $french-blue;
+  margin-left: 13px;
+}
+#rad h2 {
+  margin-left: 19px;
+  font-size: 30px;
+  color: $french-blue;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+}
+#shareicons {
+  vertical-align: middle;
+  height: 33px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  display: inline-block;
+}
+.comm {
+  bottom: 27px;
+  margin-left: 34px;
+}
+#comments {
+  width: 160px;
+  height: 32px;
+  background-color: $gull-gray;
+  vertical-align: middle;
+  display: inline-block;
+  float: left;
+  color: white;
+}
+#com_img {
+  display: block;
+  height: 33px;
+  width: 33px;
+  background-position: center;
+  background-color: $gull-gray;
+  clear: both;
+}
+#comments:hover {
+  background: $french-blue;
+  -moz-transition: background 0.3s linear;
+  -webkit-transition: background 0.3s linear;
+  -o-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
+#com_img img:hover {
+  background: $french-blue;
+  -moz-transition: background 0.3s linear;
+  -webkit-transition: background 0.3s linear;
+  -o-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
+#later:hover {
+  background: $french-blue;
+  -moz-transition: background 0.3s linear;
+  -webkit-transition: background 0.3s linear;
+  -o-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
+#share:hover {
+  background: $french-blue;
+  -moz-transition: background 0.3s linear;
+  -webkit-transition: background 0.3s linear;
+  -o-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
+#shareicons #later img {
+  height: inherit;
+  background-color: $shuttle-gray;
+}
+#shareicons img {
+  height: inherit;
+  background-color: $shuttle-gray;
+}
+#comments span {
+  position: relative;
+  bottom: 25px;
+  display: inline-block;
+}
+#later {
+  width: 129px;
+  height: 32px;
+  background-color: $shuttle-gray;
+  display: inline-block;
+  float: left;
+  margin-left: 8px;
+  color: white;
+}
+#later span {
+  position: relative;
+  bottom: 11px;
+}
+#later img {
+  height: auto;
+}
+#share {
+  width: 154px;
+  height: 32px;
+  background-color: $gull-gray;
+  vertical-align: middle;
+  display: inline-block;
+  float: left;
+  margin-left: 8px;
+  color: white;
+}
+#share span {
+  position: relative;
+  bottom: 11px;
+}
+#sidesquare img {
+  width: 277px;
+  height: 297px;
+  padding: none;
+}
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+}
+#circlepic {
+  float: right;
+  width: 30%;
+}
+#circlepic * {
+  margin: auto;
+}
+#circlepic .hz-center {
+  height: 302;
+  width: 277;
+}
+#circlepic {
+  margin-top: -159px;
+  margin-right: 52px;
+}
+#circlepic .circlink {
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  color: $gull-grey;
+}
+#circlepic p {
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+  color: $french-blue;
+}
+#circlepic .anne p {
+  color: $french-blue;
+}
+.profile-pic {
+  height: 87px;
+  width: 88px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  margin: 0 auto;
+}
+.inception {
+  text-align: center;
+  margin-bottom: 43px;
+  font-size: 14px;
+}
+#sidepic {
+  margin-top: 44px;
+  margin-left: 16px;
+}
+#sidesquare {
+  float: right;
+  width: 30%;
+  clear: both;
+  display: inline-block;
+}
+#aboutthisad {
+  margin-left: 196px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+}
+#sidetext {
+  float: right;
+  width: 30%;
+  clear: both;
+  display: inline-block;
+}
+#sidepic p {
+  text-align: left;
+}
+#circlepic h3,
+p {
+  font-family: "Oswald", sans-serif;
+  margin-top: 48px;
+}
+#circlepic h3 {
+  color: $french-blue;
+}
+#circlepic p {
+  color: $gull-gray;
+  font-weight: lighter;
+}
+#bottomheadline {
+  width: 100%;
+  text-align: center;
+  clear: both;
+  border-top: solid 1px $gull-gray;
+  margin-top: 44px;
+}
+#bottomheadline h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+}
+.lowpic {
+  display: inline-block;
+  width: 25%;
+  height: 330px;
+  vertical-align: top;
+  line-height: 0;
+  padding: 0;
+  float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  text-size: 100px;
+}
+.lowpic p {
+  bottom: 0;
+  text-size: 90px;
+  font-weight: bold;
+  position: absolute;
+  line-height: normal;
+  margin-left: 17px;
+}
+.one {
+  background-image: url("../images/futureislands.jpg");
+  background-position: center;
+  text-align: center;
+  font-size: 30px;
+
+  @include transluscent-background(green);
+}
+.two {
+  background-image: url("../images/holdsteady.jpg");
+  background-position: center;
+  font-size: 30px;
+
+  @include transluscent-background($primary-accent-color, 2s);
+}
+.three {
+  background-image: url("../images/St_Vincent.jpg");
+  background-position: center;
+  font-size: 30px;
+  word-wrap: break-word;
+
+  @include transluscent-background($primary-accent-color, 2s);
+}
+.four {
+  background-image: url("../images/spoon.jpg");
+  background-position: center;
+  font-size: 30px;
+
+  @include transluscent-background($primary-accent-color, 2s);
+}
+.footer {
+  color: $gull-gray;
+  background-color: #0b3551;
+  display: inline-block;
+  width: 100%;
+  height: 103px;
+}
+.footer p {
+  display: inline-block;
+  position: relative;
+  bottom: 20px;
+}
+.footer ul {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  float: right;
+  margin-left: none;
+  position: relative;
+  top: 12px;
+  font-size: 13px;
+  text-decoration: none;
+  color: $gull-gray;
+}
+.footer li {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  color: $gull-gray;
+}
+.footer span {
+  position: relative;
+  bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+#footdiv {
+  width: 986px;
+  position: relative;
+  left: 151px;
+}
+#footdiv {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  float: right;
+  margin-left: none;
+  position: relative;
+  top: 12px;
+  font-size: 13px;
+  text-decoration: none;
+  color: $gull-gray;
+  margin-right: 380px;
+}
+#footdiv p {
+  bottom: 55px;
+}
+#footdiv ul a {
+  text-decoration: none;
+}
